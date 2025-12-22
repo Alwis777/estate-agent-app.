@@ -16,7 +16,7 @@ return(
         <img src = {property.picture} alt ={property.location} className ="card-image"/>
 
        
-       <button className="favorite-button" title ="Add to Favorites">
+       <button className="favorite-btn" title ="Add to Favorites">
         <FaHeart/>
          </button>
         </div>
@@ -29,12 +29,12 @@ return(
 
             <h4 className =" card-location">{property.location}</h4>
 
-            <p className="card-description">{property.description.subsctring(0,60)}...               
+            <p className="card-description">{property.description.substring(0,60)}...               
             </p>
 
             <div className="card-footer">
                 <span className= "specs">{property.bedrooms} Beds </span>
-            <Link to ={'/property/${property.id}'} className="view-details.btn">View Details
+            <Link to={`/property/${property.id}`} className="view-details.btn">View Details
             </Link>
             </div>
         </div>

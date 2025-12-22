@@ -12,11 +12,11 @@ function SearchPage() {
                 <h2>Find Your Perfect Home</h2>
             </div>
 
-            <dive className="properties=grid">
+            <div className="properties-grid">
                 {properties.map((property) => (
-                    <propertyCard key={property.id}property={property}/>
+                    <PropertyCard key={property.id} property={property} />
                 ))}
-            </dive>
+            </div>
         </div>
     );
 }

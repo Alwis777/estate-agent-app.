@@ -1,17 +1,18 @@
-import {Link}from 'react-router-dom';
-import '/Navbar.css';
+import React from 'react';
 
-function Navbar(){
+function Footer(){
     return(
-        <nav className="navbar">
-            <div className="nav-brand">
-                <Link to="/">Estate Agent</Link>
-            </div>
-            <div className="nav-links">
-                <Link to="/">Search Properties</Link>
-                <Link to="/favorites">My Favorites</Link>
-            </div>
-        </nav>
-    )
+        <footer style={{
+            textAlign: 'center',
+            padding: '10px',
+            background: '#f8f9fa',
+            color:'#666',
+            marginTop: 'auto',
+            borderTop: '1px solid #eaeaea'
+        }}>
+            <p>&copy; {new Date().getFullYear()} Estate Agent. All rights reserved.</p>
+
+        </footer>
+    );
 }
-export default Navbar;
+export default Footer;
