@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SearchPage from'components/SearchPage';
+import SearchPage from'./components/SearchPage';
 
 function App() {
   return (
