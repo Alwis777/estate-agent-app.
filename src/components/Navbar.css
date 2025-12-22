@@ -22,3 +22,6 @@
     font-size: 1rem;
     transition:color 0.3s;
 }
+.nav-links a:hover{
+    color:#3498db;
+}
