@@ -4,7 +4,7 @@ import SearchForm from './SearchForm';
 import propertiesData from '../data/properties.json';
 import './SearchPage.css';
 
-function SearchPage() {
+function SearchPage({ addToFavorites, favorites = [] }) {
     const [properties, setProperties] = useState([]);
 
     useEffect(() => {
@@ -43,7 +43,13 @@ function SearchPage() {
 
             <div className="properties-grid">
                 {properties.map((property) => (
-                    <PropertyCard key={property.id} property={property} />
+                    <PropertyCard 
+                        key={property.id} 
+                        property={property}
+                        onFavorite={addToFavorites}
+                        
+                        isFavorite={favorites.some(fav => fav.id === property.id)}
+                    />
                 ))}
             </div>
         </div>
