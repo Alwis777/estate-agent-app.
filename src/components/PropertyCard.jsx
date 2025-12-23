@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import './PropertyCard.css';
 
-function PropertyCard({ property }) {
+function PropertyCard({ property,onFavourite,isFavourite}) {
     // Format the price nicely
     const formattedPrice = new Intl.NumberFormat('en-GB', {
         style: 'currency',
@@ -14,7 +14,13 @@ function PropertyCard({ property }) {
         <div className="property-card">
             <div className="card-image-container">
                 <img src={property.picture} alt={property.location} className="card-image" />
-                <button className="favorite-btn" title="Add to Favorites">
+
+                
+                <button 
+                    className={`favorite-btn ${isFavorite ? 'active' : ''}`} 
+                    onClick={() => onFavorite(property)}
+                    title={isFavorite ? "Already in Favorites" : "Add to Favorites"}
+                >
                     <FaHeart />
                 </button>
             </div>
