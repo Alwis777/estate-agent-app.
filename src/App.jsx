@@ -32,7 +32,8 @@ function App() {
   return (
     <Router>
       <div className="app-container" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <Navbar />
+        
+        <Navbar favoritesCount={favorites.length} />
         
         <main style={{ flex: 1, padding: '20px', backgroundColor: '#e9e9e9ff' }}>
           <Routes>
