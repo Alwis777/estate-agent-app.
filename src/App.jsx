@@ -4,19 +4,29 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SearchPage from './components/SearchPage';
 import PropertyDetails from './components/PropertyDetails';
+import Favorites from './components/Favorites';
 
 function App() {
   const [favorites, setFavorites] = useState([]);
 
+ 
   const addFavorite = (property) => {
     if (favorites.some(fav => fav.id === property.id)) {
       alert("This property is already in your favorites!");
       return;
     }
-    
     const newList = [...favorites, property];
     setFavorites(newList);
     alert("Property added to favorites! ❤️");
+  };
+  const removeFavorite = (id) => {
+    const updatedList = favorites.filter(item => item.id !== id);
+    setFavorites(updatedList);
+  };
+
+
+  const clearFavorites = () => {
+    setFavorites([]);
   };
 
   return (
@@ -36,7 +46,17 @@ function App() {
               element={<PropertyDetails onAddToFavorites={addFavorite} />} 
             />
             
-            <Route path="/favorites" element={<h1>Favorites Page (Coming Soon)</h1>} />
+          
+            <Route 
+              path="/favorites" 
+              element={
+                <Favorites 
+                  favorites={favorites} 
+                  onRemove={removeFavorite}
+                  onClear={clearFavorites}
+                />
+              } 
+            />
           </Routes>
         </main>
 

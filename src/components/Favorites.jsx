@@ -1,10 +1,10 @@
 import PropertyCard from './PropertyCard';
-import './Favourites.css';
+import './Favorites.css';
 
-function Favourites({ favorites, onRemove, onClear }) {
+function Favorites({ favorites, onRemove, onClear }) {
     return (
-       <div className="favourites-page">
-        <div className="favourites-header">
+       <div className="favorites-page">
+        <div className="favorites-header">
             <h2>My Saved Properties</h2>
 
             {favorites.length > 0 && (
@@ -43,4 +43,4 @@ function Favourites({ favorites, onRemove, onClear }) {
     );
 }
 
-export default Favourites;
+export default Favorites;
