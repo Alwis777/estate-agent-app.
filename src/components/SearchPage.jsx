@@ -1,5 +1,6 @@
 import PropertyCard from './PropertyCard';
 import propertiesData from '../data/properties.json';
+
 import './SearchPage.css';
 
 function SearchPage() {

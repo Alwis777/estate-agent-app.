@@ -26,7 +26,7 @@ function SearchForm({ onSearch }) {
                 <select name="type">
                     <option value="">Any</option>
                     <option value="House">House</option>
-                    <option value="Apartment">Flat</option>
+                    <option value="Flat">Flat</option>
                     </select>
             </div>
 
