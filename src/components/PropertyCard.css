@@ -18,6 +18,7 @@
     position: relative;
     height: 200px;
     background-color:#eee;
+    overflow:hidden;
 
 }
 .card-image{
@@ -25,26 +26,30 @@
     height:100%;
     object-fit: cover;
 }
-.favourite-btn{
-    position:absolute;
-    top:10px;
-    right:10px;
-    background: rgba(255,255,255,0.9);
-    border:none;
-    border-radius:50%;
-    width:35px;
-    height:35px;
-    cursor:pointer;
-    color:#ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.3s; 
-
+.favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+  z-index: 10;
+  color: #ccc;
+  font-size: 1.2rem;
 }
 
-.favourite-btn:hover{
-    color: #e74c3c;
+.favorite-btn:hover {
+  transform: scale(1.15);
+  color: #e74c3c;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .card-content{
     padding:15px;

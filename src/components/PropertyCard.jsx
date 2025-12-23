@@ -1,50 +1,47 @@
-import { Link }from 'react-router-dom';
-import {FaHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaHeart } from 'react-icons/fa';
+import './PropertyCard.css';
 
 function PropertyCard({ property }) {
+    // Format the price nicely
+    const formattedPrice = new Intl.NumberFormat('en-GB', {
+        style: 'currency',
+        currency: 'GBP',
+        minimumFractionDigits: 0,
+    }).format(property.price);
 
-
-const formattedPrice = new Intl.NumberFormat('en-GB', {
-    style: 'currency',
-    currency: 'GBP',
-    minimumFractionDigits: 0,
-}).format(property.price);
-
-return(
-    <div className="property-card">
-      <div className = "card-image-container">
-        <img src = {property.picture} alt ={property.location} className ="card-image"/>
-
-       
-       <button className="favorite-btn" title ="Add to Favorites">
-        <FaHeart/>
-         </button>
-        </div>
-
-        <div className="card-content">
-            <div className="card-header">
-                <span className="property-type">{property.type}</span>
-                <span className="property-price">{formattedPrice}</span>
+    return (
+        <div className="property-card">
+            <div className="card-image-container">
+                <img src={property.picture} alt={property.location} className="card-image" />
+                <button className="favorite-btn" title="Add to Favorites">
+                    <FaHeart />
+                </button>
             </div>
 
-            <h4 className =" card-location">{property.location}</h4>
+            <div className="card-content">
+                <div className="card-header">
+                    <span className="property-type">{property.type}</span>
+                    <span className="property-price">{formattedPrice}</span>
+                </div>
 
-            <p className="card-description">{property.description.substring(0,60)}...               
-            </p>
+                <h4 className="card-location">{property.location}</h4>
 
-            <div className="card-footer">
-                <span className= "specs">{property.bedrooms} Beds </span>
-            <Link to={`/property/${property.id}`} className="view-details.btn">View Details
-            </Link>
+                {/* TYPO FIXED: 'substring' instead of 'subsctring' */}
+                <p className="card-description">
+                    {property.description.substring(0, 60)}...
+                </p>
+
+                <div className="card-footer">
+                    <span className="specs">{property.bedrooms} Beds</span>
+                    {/* TYPO FIXED: Fixed the quotes in the Link */}
+                    <Link to={`/property/${property.id}`} className="view-details-btn">
+                        View Details
+                    </Link>
+                </div>
             </div>
         </div>
-    </div>
-);
-}export default PropertyCard;
-            
-      
+    );
+}
 
-
-
-    
-
+export default PropertyCard;
