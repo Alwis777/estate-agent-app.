@@ -4,7 +4,7 @@ import { FaArrowLeft, FaBed, FaMapMarkerAlt, FaHeart } from 'react-icons/fa';
 import propertiesData from '../data/properties.json';
 import './PropertyDetails.css'; 
 
-function PropertyDetails() {
+function PropertyDetails({onAddToFavorites}) {
   const { id } = useParams();
   const property = propertiesData.properties.find(p => p.id === id);
 
@@ -71,7 +71,7 @@ function PropertyDetails() {
             </div>
           </div>
 
-          <button className="add-fav-btn">
+          <button className="add-fav-btn" onClick={() => onAddToFavorites(property)}>
             <FaHeart /> Add to Favorites
           </button>
 

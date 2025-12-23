@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -26,7 +27,8 @@ function App() {
         
         <main style={{ flex: 1, padding: '20px', backgroundColor: '#e9e9e9ff' }}>
           <Routes>
-            <Route path="/" element={<SearchPage />} />
+         <Route  path="/" element={<SearchPage addToFavorites={addFavorite} favorites={favorites} />} 
+      />
 
 
             <Route path="/property/:id" element={<PropertyDetails onAddToFavorites={addFavourite} />} />
