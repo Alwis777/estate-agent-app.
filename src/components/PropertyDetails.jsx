@@ -116,7 +116,6 @@ function PropertyDetails() {
 
               {activeTab === 'map' && (
                 <div className="map-tab">
-                   {/* FIXED: Correct Google Maps Embed URL */}
                    <iframe 
                      width="100%" 
                      height="300" 
