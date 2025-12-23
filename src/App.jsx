@@ -10,7 +10,7 @@ function App() {
       
         <Navbar />
         
-        <main style={{ flex: 1, padding: '20px', backgroundColor: '#000000ff' }}>
+        <main style={{ flex: 1, padding: '20px', backgroundColor: '#e9e9e9ff' }}>
           <Routes>
             <Route path="/" element={<SearchPage />} />
 
