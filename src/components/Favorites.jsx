@@ -8,7 +8,7 @@ function Favorites({ favorites, onRemove, onClear }) {
             <h2>My Saved Properties</h2>
 
             {favorites.length > 0 && (
-                <button className="clear-favourites-btn" onClick={onClear}>
+                <button className="clear-favorites-btn" onClick={onClear}>
                     Clear All Favorites
                 </button>
             )}
