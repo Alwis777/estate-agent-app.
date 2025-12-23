@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SearchPage from'./components/SearchPage';
+import PropertyDetails from './components/PropertyDetails';
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
           <Routes>
             <Route path="/" element={<SearchPage />} />
 
-        
-            <Route path="/property/:id" element={<h1>Property Details (Coming Soon)</h1>} />
+
+            <Route path="/property/:id" element={<PropertyDetails />} />
             <Route path="/favorites" element={<h1>Favorites Page (Coming Soon)</h1>} />
           </Routes>
         </main>

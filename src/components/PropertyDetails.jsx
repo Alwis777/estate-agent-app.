@@ -1,21 +1,28 @@
 import { useParams, Link } from 'react-router-dom';
-import{useState} from 'react';
+import { useState } from 'react';
 import { FaArrowLeft, FaBed, FaMapMarkerAlt, FaHeart } from 'react-icons/fa';
 import propertiesData from '../data/properties.json';
-import './PropertyDetails.css';
+import './PropertyDetails.css'; 
 
 function PropertyDetails() {
-    const { id } = useParams();
+  const { id } = useParams();
+  const property = propertiesData.properties.find(p => p.id === id);
 
-    const property = propertiesData.properties.find(p => p.id === id);
+  // State for the gallery
+  const [mainImage, setMainImage] = useState(property ? property.picture : null);
+  
+  // State for the Tabs (Default to 'desc')
+  const [activeTab, setActiveTab] = useState('desc');
 
-    const [mainImage, setMainImage] = useState(property ? property.picture : null);
-
-    if(!property) {
-        return <div className="error-message"><h2>Property not found!</h2><Link to="/">Back to Search</Link></div>;
+  if (!property) {
+    return (
+      <div className="error-message">
+        <h2>Property not found!</h2>
+        <Link to="/">Back to Search</Link>
+      </div>
+    );
   }
 
-  // Price formatter
   const formattedPrice = new Intl.NumberFormat('en-GB', {
     style: 'currency', currency: 'GBP', minimumFractionDigits: 0
   }).format(property.price);
@@ -26,12 +33,11 @@ function PropertyDetails() {
 
       <div className="details-grid">
         
-
+        {/* LEFT COLUMN: Gallery */}
         <div className="gallery-section">
           <div className="main-image-frame">
             <img src={mainImage} alt={property.location} className="main-image" />
           </div>
-          
           <div className="thumbnail-grid">
             {property.images.map((img, index) => (
               <img 
@@ -45,7 +51,7 @@ function PropertyDetails() {
           </div>
         </div>
 
-      
+     
         <div className="info-section">
           <div className="title-header">
             <div>
@@ -65,13 +71,67 @@ function PropertyDetails() {
             </div>
           </div>
 
-          <p className="short-description">{property.description}</p>
-
           <button className="add-fav-btn">
             <FaHeart /> Add to Favorites
           </button>
 
+          {/* --- TABS SECTION --- */}
+          <div className="tabs-container">
+            <div className="tabs-header">
+              <button 
+                className={`tab-btn ${activeTab === 'desc' ? 'active' : ''}`} 
+                onClick={() => setActiveTab('desc')}
+              >
+                Description
+              </button>
+              <button 
+                className={`tab-btn ${activeTab === 'floorplan' ? 'active' : ''}`} 
+                onClick={() => setActiveTab('floorplan')}
+              >
+                Floor Plan
+              </button>
+              <button 
+                className={`tab-btn ${activeTab === 'map' ? 'active' : ''}`} 
+                onClick={() => setActiveTab('map')}
+              >
+                Map
+              </button>
+            </div>
+
+            <div className="tab-content">
+              {activeTab === 'desc' && (
+                <div className="description-tab">
+                  <h3>Property Description</h3>
+                  <p>{property.description}</p>
+                </div>
+              )}
+
+              {activeTab === 'floorplan' && (
+                <div className="floorplan-tab">
+                  <div className="placeholder-box">
+                    <p>📏 Floor Plan Placeholder</p>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'map' && (
+                <div className="map-tab">
+                   {/* FIXED: Correct Google Maps Embed URL */}
+                   <iframe 
+                     width="100%" 
+                     height="300" 
+                     style={{border:0, borderRadius: '8px'}} 
+                     loading="lazy" 
+                     allowFullScreen
+                     referrerPolicy="no-referrer-when-downgrade"
+                     src={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}>
+                   </iframe>
+                </div>
+              )}
+            </div>
+          </div>
         
+
         </div>
       </div>
     </div>
