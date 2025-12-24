@@ -13,12 +13,16 @@ function Navbar({favoritesCount = 0}){
                 </Link>
                 <ul className="nav-menu">
                     <li className="nav-item">
-                        <Link to="/" className="nav-links">
+                        <Link
+                            to="/" 
+                            className={`nav-links ${location.pathname === '/' ? 'active' : ''}`}
+                        >
                             Search Properties
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/favorites" className="nav-links favorites-link">
+
+                        <Link to="/favorites" className={`nav-links favorites-link ${location.pathname === '/favorites' ? 'active' : ''}`}>
                             My Favorites
                             {favoritesCount > 0 && (
                                 <span className="fav-badge">{favoritesCount}</span>
