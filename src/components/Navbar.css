@@ -44,65 +44,59 @@
 }
 
 /*Menu Links*/
-
 .nav-menu{
     display:flex;
     list-style:none;
-    gap:40px;
+    gap:35px;
     align-items: center;
     margin:0;
-    gap: 5px;
 }
-.nav-item {
-  display: flex;
-  align-items: center;
-}
-.nav-item:not(:last-child)::after {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 20px; 
-  background-color: rgba(255, 255, 255, 0.2); 
-  margin: 0 15px; 
-}
+
 .nav-links{
     text-decoration: none;
-    color: #94a3b8;
+    color: rgba(255, 255, 255, 0.85);
     font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: call 0.3s ease;
+    font-size:0.95rem;   
+    letter-spacing:0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 15px 0;
 }
-
 .nav-links:hover{
     color:#fff;
-    background-color:rgba(255, 255, 255, 0.08) ;
-    backdrop-filter: blur(5px);
+    transform:translateY(-1px);
 }
 
+.nav-links::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-green);
+    transition: width 0.3s ease-in-out;
+}
+.nav-links:hover::after{
+    width: 100%;
+}
 .nav-links.active {
-  color: #38bdf8;
-  background-color: rgba(56, 189, 248, 0.1);
-  font-weight: 600;
+  color: white;
+  font-weight: 700;
+}
+
+.nav-links.active::after {
+  width: 100%;
 }
 
 /*Favorite Badge*/
 
 .fav-badge{
-   background: #ef4444;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: bold;
-    min-width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-left: 8px;
+   position:absolute;
+   top:-8px;
+   right:-12px;
+   
+
     
 }
 
