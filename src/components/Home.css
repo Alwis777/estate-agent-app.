@@ -186,7 +186,7 @@
 }
 
 .cta-section h2{
-    color:#ffffff;
+    color:#6f8478;
     margin-bottom:40px;
     font-size:3.5rem;
     font-weight:800;
@@ -196,7 +196,7 @@
 }
 
 .cta-btn{
-    background-color:white;
+    background-color:#d6ffee41;
     color:var(--text-charcoal);
     padding:20px 60px;
     font-weight: 700;
