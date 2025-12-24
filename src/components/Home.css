@@ -13,17 +13,17 @@
 }
 
 .sub-heading{
-    color: var(--primary-green);
+    color: var(--text-charcoal);
     font-weight: 700;
     letter-spacing: 3px;
     margin-bottom:20px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-transform: uppercase;
 }
 
 .about-content h2{
     font-size:3rem;
-    color:var(--text-charcoal);
+    color: var(--primary-green);
     margin-bottom:30px;
     font-weight: 800;
     letter-spacing: -1px;
