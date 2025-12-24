@@ -3,7 +3,7 @@ import { FaHeart } from 'react-icons/fa';
 import './PropertyCard.css';
 
 function PropertyCard({ property,onFavorite,isFavorite}) {
-    // Format the price nicely
+    
     const formattedPrice = new Intl.NumberFormat('en-GB', {
         style: 'currency',
         currency: 'GBP',
