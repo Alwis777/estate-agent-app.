@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
+import Home from './components/Home';
 import Footer from './components/Footer'; 
 import SearchPage from './components/SearchPage';
 import PropertyDetails from './components/PropertyDetails';
@@ -35,11 +36,11 @@ function App() {
         <Hero favoritesCount={favorites.length} />
 
        
-        <main className="main-content" style={{ padding: '40px 20px', minHeight: '50vh' }}>
+        <main className="main-content" style={{ padding: '40px 0', minHeight: '50vh' }}>
           <Routes>
             <Route 
               path="/" 
-              element={<SearchPage addToFavorites={addFavorite} favorites={favorites} />} 
+              element={<Home addToFavorites={addFavorite} favorites={favorites} />} 
             />
 
             <Route 
