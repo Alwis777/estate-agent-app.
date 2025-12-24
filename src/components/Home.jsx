@@ -10,11 +10,11 @@ function Home({ addToFavorites, favorites=[] }) {
     const featuredProperties = propertiesData.properties.slice(0, 3);
 
     return(
-        <div className="home-container">
+        <div className="home-wrapper">
 
             {/*ABOUT SECTION*/}
-            <section className="about-section">
-                <div className="about-content">
+            <section className="about-section full-width">
+                <div className="content-container">
                     <h5 className="sub-heading">WHO WE ARE</h5>
                     <h2>Elevating Every Step of Your Journey</h2>
                     <p>We combine advanced market data with a curated selection of properties to help you find a home that fits your lifestyle.
@@ -24,11 +24,11 @@ function Home({ addToFavorites, favorites=[] }) {
             </section>
 
             {/* 2. FEATURES SECTION */}
-        <section className="features-section">
-            <div className="features-grid">
-            {/* Feature 1 */}
-            <div className="feature-card glass-panel">
-                <div className="icon-box">
+        <section className="features-section full-width">
+        <div className="content-container">
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="icon-box">
                 <FaUserShield />
                 </div>
                 <h3>Trusted Agents</h3>
@@ -62,13 +62,15 @@ function Home({ addToFavorites, favorites=[] }) {
                 <p>Recognized for excellence in eco-friendly real estate.</p>
             </div>
             </div>
+            </div>
         </section>
 
         {/* 3. EXCLUSIVE PROPERTIES TEASER */}
-        <section className="featured-listings">
-            <div className="section-header">
-            <h2>Exclusive Properties You'll Love</h2>
-            <Link to="/properties" className="view-all-link">View All Properties →</Link>
+        <section className="featured-listings full width">
+            <div className="content-container">
+              <div className="section-header">
+                <h2>Exclusive Properties You'll Love</h2>
+                <Link to="/properties" className="view-all-link">View All Properties →</Link>
             </div>
 
             <div className="home-properties-grid">
@@ -81,6 +83,7 @@ function Home({ addToFavorites, favorites=[] }) {
                 />
             ))}
             </div>
+           </div>
         </section>
 
         {/* 4. CALL TO ACTION */}
