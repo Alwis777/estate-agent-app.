@@ -36,7 +36,7 @@ function App() {
         <Hero favoritesCount={favorites.length} />
 
        
-        <main className="main-content" style={{ padding: '40px 0', minHeight: '50vh' }}>
+        <main className="main-content" style={{ padding: '0', minHeight: '50vh' }}>
           <Routes>
             <Route 
               path="/" 
