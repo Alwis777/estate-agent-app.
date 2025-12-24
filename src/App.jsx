@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Hero from './components/Hero';
+import Footer from './components/Footer'; 
 import SearchPage from './components/SearchPage';
 import PropertyDetails from './components/PropertyDetails';
 import Favorites from './components/Favorites';
@@ -9,7 +9,6 @@ import Favorites from './components/Favorites';
 function App() {
   const [favorites, setFavorites] = useState([]);
 
- 
   const addFavorite = (property) => {
     if (favorites.some(fav => fav.id === property.id)) {
       alert("This property is already in your favorites!");
@@ -19,11 +18,11 @@ function App() {
     setFavorites(newList);
     alert("Property added to favorites! ❤️");
   };
+
   const removeFavorite = (id) => {
     const updatedList = favorites.filter(item => item.id !== id);
     setFavorites(updatedList);
   };
-
 
   const clearFavorites = () => {
     setFavorites([]);
@@ -31,11 +30,12 @@ function App() {
 
   return (
     <Router>
-      <div className="app-container" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div className="app-container">
         
-        <Navbar favoritesCount={favorites.length} />
-        
-        <main style={{ flex: 1, padding: '20px', backgroundColor: '#e9e9e9ff' }}>
+        <Hero favoritesCount={favorites.length} />
+
+       
+        <main className="main-content" style={{ padding: '40px 20px', minHeight: '50vh' }}>
           <Routes>
             <Route 
               path="/" 
@@ -47,7 +47,6 @@ function App() {
               element={<PropertyDetails onAddToFavorites={addFavorite} />} 
             />
             
-          
             <Route 
               path="/favorites" 
               element={
@@ -61,7 +60,9 @@ function App() {
           </Routes>
         </main>
 
+        {/* 3. FOOTER */}
         <Footer/>
+        
       </div>
     </Router>
   );
