@@ -1,24 +1,23 @@
 .search-form {
   background-color: white;
-  padding: 25px;
-  border-radius: 12px;
+  padding: 20px;
+  border-radius: 8px;
   box-shadow:0 4px 20px rgba(0,0,0,0.08);
-  margin-bottom:40px;
-  border: 1px solid #f0f0f0;
-
-  display:flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-end;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px; 
+  justify-content: center; 
+  align-items: flex-end; 
+  max-width: 1300px; 
+  margin: 0 auto; 
 }
-
+ 
 .form-group{
   display: flex;
   flex-direction: column;
-  gap: 8px;  
+  gap: 5px;  
   flex:1;
-  min-width: 150px;
+  min-width: 120px;
 }
 
 .form-group label{
