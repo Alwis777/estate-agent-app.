@@ -58,10 +58,18 @@ function App() {
                 />
               } 
             />
+            <Route 
+              path="/contact" 
+              element={
+                <div style={{ padding: '100px 20px', textAlign: 'center' }}>
+                  <h2 style={{ color: '#6F8F6A' }}>Contact Us</h2>
+                  <p>Our team is ready to help you find your dream home.</p>
+                  <p>Email: hello@estateagent.com</p>
+                </div>
+              } 
+            />
           </Routes>
         </main>
-
-        {/* 3. FOOTER */}
         <Footer/>
         
       </div>
