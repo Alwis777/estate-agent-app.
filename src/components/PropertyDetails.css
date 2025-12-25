@@ -34,7 +34,7 @@
 .main-image-frame {
   height: 500px; 
   width: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   margin-bottom: 20px;
@@ -71,11 +71,11 @@
 /*INFO SECTION*/
 
 .info-section{
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(160, 168, 166, 0.322);
   backdrop-filter:blur(20px);
   border:1px solid rgba(255, 255, 255, 0.8) ;
   padding:40px;
-  border-radius:12px;
+  border-radius:4px;
   box-shadow:0 10px 40px rgba(0,0,0,0.05);
 }
 .title-header h1 {
@@ -145,7 +145,8 @@
 }
 
 .add-fav-btn:hover{
-  background-color:var(--text-charcoal);
+  background-color:var(--primary-green);
+  border: 1px solid var(--text-charcoal);
   color:white;
 }
 

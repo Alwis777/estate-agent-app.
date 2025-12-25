@@ -8,10 +8,10 @@ function PropertyDetails({onAddToFavorites}) {
   const { id } = useParams();
   const property = propertiesData.properties.find(p => p.id === id);
 
-  // State for the gallery
+  
   const [mainImage, setMainImage] = useState(property ? property.picture : null);
   
-  // State for the Tabs (Default to 'desc')
+ 
   const [activeTab, setActiveTab] = useState('desc');
 
   if (!property) {
@@ -75,7 +75,7 @@ function PropertyDetails({onAddToFavorites}) {
             <FaHeart /> Add to Favorites
           </button>
 
-          {/* --- TABS SECTION --- */}
+          {/* TABS SECTION  */}
           <div className="tabs-container">
             <div className="tabs-header">
               <button 
@@ -122,8 +122,7 @@ function PropertyDetails({onAddToFavorites}) {
                      style={{border:0, borderRadius: '8px'}} 
                      loading="lazy" 
                      allowFullScreen
-                     referrerPolicy="no-referrer-when-downgrade"
-                     src={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}>
+                     src ={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}>
                    </iframe>
                 </div>
               )}

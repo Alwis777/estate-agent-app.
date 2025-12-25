@@ -1,6 +1,6 @@
 .property-card {
-    background: white;
-    border: 1px solid rgba(0,0,0,0.05);
+    background: rgba(220, 220, 220, 0.756);
+    border: 1px solid rgba(100, 127, 115, 0.863);
     border-radius: 4px;
     overflow: hidden;
     transition: all 0.3s ease; 
@@ -10,11 +10,6 @@
     position:relative;
 }
 
-.property-card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    border-color: var(--primary-green);
-}
 
 .card-image-container{
     position: relative;
@@ -75,7 +70,7 @@
 }
 
 .property-type{
-    color:var(--primary-green);
+    color:#47514b;
     font-size:0.75rem;
     text-transform: uppercase;
     letter-spacing:1px;
@@ -98,9 +93,9 @@
 .view-details-btn{
     display:block;
     text-align:center;
-    background-color: white;
-    color:var(--text-charcoal);
-    border:1px solid var(--text-charcoal);
+    background-color: #2a2d2ceb;
+    color:#f8f8f8a3;
+    border: 1px solid rgba(131, 142, 135);
     padding:12px;
     border-radius:2px;
     text-decoration:none;

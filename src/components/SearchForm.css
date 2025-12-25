@@ -17,7 +17,6 @@
 }
 
 .search-form:hover {
-  transform: translateY(-2px);
   border-color: var(--primary-green);
 }
  
@@ -58,12 +57,12 @@ input:focus, select:focus{
 }
 
 .search-btn{
-    background-color: var(--text-charcoal);
+    background-color:#2a2d2cd5;
     color:white;
     padding: 0 40px;
     height:48px;
     border:none;
-    border-radius: 4px;
+    border-radius: 2px;
     font-size: 0.9rem;
     font-weight: 700;
     cursor: pointer;
@@ -75,8 +74,6 @@ input:focus, select:focus{
 
 .search-btn:hover {
  background-color:var(--primary-green);
- transform:translateY(-2px);
- box-shadow: 0 10px 20px rgba(111, 143, 106, 0.3) ;
 }
 
 .search-btn:active {
