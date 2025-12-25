@@ -102,7 +102,7 @@
     color:var(--text-charcoal);
     border:1px solid var(--text-charcoal);
     padding:12px;
-    border-radius:4px;
+    border-radius:2px;
     text-decoration:none;
     font-weight:700;
     font-size:0.85rem;
@@ -136,6 +136,7 @@
 }
 
 .view-details-btn:hover{
-    background-color:var(--text-charcoal);
+    background-color:var(--primary-green);
     color:white;
+    border:none;
 }
