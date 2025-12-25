@@ -53,8 +53,10 @@
 /*FEATURES SECTION(grid)*/
 
 .features-section{
-    background:url('/images/bg9.jpg');
-    padding:100px 0;
+    background:url('/images/bg9.jpg') ;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 60px 0; 
     position: relative;
 }
 
@@ -72,46 +74,45 @@
 
 .features-grid{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap:25px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 
 }
 
 .feature-card{
     /*/* Using the global .glass-panel class from index.css */
-   background:rgba(72, 69, 69, 0.962);
-   padding:40px 30px;
-   border-radius: 4px;
-   text-align:left;
+   background:rgba(115, 123, 118, 0.907);
+   padding:30px 20px;
+   border-radius: 5px;
+   text-align:center;
    display:flex;
    flex-direction:column;
-   align-items:flex-start;
-   gap:15px;
+   align-items:center;
+   gap:12px;
    transition: transform 0.3s ease;
-   position:relative;
-  border-bottom: 4px solid transparent;
+   
 }
 
 .feature-card:hover{
     transform: translateY(-5px);
-    border-bottom: 4px solid var(--primary-green);
+    border-bottom: 4px solid #47514b;
 }
 
 .icon-box{
     font-size:2rem;
-    color: var(--primary-green);;
+    color: #47514b;
     background: transparent;
     margin-bottom:10px;
 }
 
 .feature-card h3{
     font-size:1.3rem;
-    color:#aeb4aff6 ;
+    color:var(--text-charcoal) ;
     font-weight:700;
 }
 .feature-card p{
     font-size:0.95rem;
-    color: #dddddd;
+    color: #e2e0e0;
     line-height:1.6;
 }
 
@@ -159,7 +160,7 @@
 
 .cta-section{
     text-align:center;
-    padding: 180px 20px;
+    padding: 100px 20px;
     background-image:url('/images/hero2.jpg');
     background-size: cover;
     background-position: center;
@@ -175,7 +176,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(84, 88, 85, 0.507), rgba(48, 63, 55, 0.693),rgba(145, 167, 156, 0.362));
+    background: linear-gradient(to bottom, rgba(84, 88, 85, 0.507), rgba(75, 78, 77, 0.693),rgba(145, 167, 156, 0.362));
     backdrop-filter: blur(0.1px); 
     z-index: 1;
 }
