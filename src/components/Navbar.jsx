@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {Link,useLocation}from 'react-router-dom';
-import { FaHome, FaHeart } from 'react-icons/fa';
+import { FaHome, FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 
 function Navbar({favoritesCount = 0}){
