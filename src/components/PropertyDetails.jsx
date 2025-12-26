@@ -4,15 +4,14 @@ import { FaArrowLeft, FaBed, FaMapMarkerAlt, FaHeart } from 'react-icons/fa';
 import propertiesData from '../data/properties.json';
 import './PropertyDetails.css'; 
 
-function PropertyDetails({onAddToFavorites}) {
+function PropertyDetails({onAddToFavorites, favorites=[]}) {
   const { id } = useParams();
   const property = propertiesData.properties.find(p => p.id === id);
 
-  
   const [mainImage, setMainImage] = useState(property ? property.picture : null);
-  
- 
   const [activeTab, setActiveTab] = useState('desc');
+
+  const isFavorite = property ? favorites.some(fav=> fav.id === property.id) : false;
 
   if (!property) {
     return (
@@ -71,8 +70,10 @@ function PropertyDetails({onAddToFavorites}) {
             </div>
           </div>
 
-          <button className="add-fav-btn" onClick={() => onAddToFavorites(property)}>
-            <FaHeart /> Add to Favorites
+          <button className={`add-fav-btn ${isFavorite ? 'added' : ''}`} 
+            onClick={() => !isFavorite && onAddToFavorites(property)}
+            disabled={isFavorite}>
+            <FaHeart /> {isFavorite? "Added to Favorites" : "Add to Favorites"}
           </button>
 
           {/* TABS SECTION  */}

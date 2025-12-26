@@ -146,8 +146,16 @@
 
 .add-fav-btn:hover{
   background-color:var(--primary-green);
-  border: 1px solid var(--text-charcoal);
+  border-color:  var(--primary-green);
   color:white;
+}
+
+.add-fav-btn-.added {
+  background-color:var(--primary-green);
+  border-color:var(--primary-green);
+  color:white;
+  cursor:default;
+  opacity: 1;
 }
 
 /* Tabs */
