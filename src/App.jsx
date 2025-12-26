@@ -48,7 +48,10 @@ function App() {
               path="/properties" 
               element={<SearchPage addToFavorites={addFavorite} favorites={favorites} />}/>
 
-              <Route path="/property/:id" element={<PropertyDetails onAddToFavorites={addFavorite} />} />
+             <Route 
+              path="/property/:id" 
+              element={<PropertyDetails onAddToFavorites={addFavorite} favorites={favorites} />} 
+            />
             
             
             <Route 

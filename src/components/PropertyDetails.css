@@ -150,11 +150,12 @@
   color:white;
 }
 
-.add-fav-btn-.added {
-  background-color:var(--primary-green);
-  border-color:var(--primary-green);
-  color:white;
+.add-fav-btn.added {
+  background-color:var(--primary-green) !important;
+  border-color:var(--primary-green)  !important;
+  color:white !important;
   cursor:default;
+  pointer-events:none; 
   opacity: 1;
 }
 

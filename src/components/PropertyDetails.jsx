@@ -8,6 +8,7 @@ function PropertyDetails({onAddToFavorites, favorites=[]}) {
   const { id } = useParams();
   const property = propertiesData.properties.find(p => p.id === id);
 
+  console.log("Current Favorites List:", favorites); 
   const [mainImage, setMainImage] = useState(property ? property.picture : null);
   const [activeTab, setActiveTab] = useState('desc');
 
