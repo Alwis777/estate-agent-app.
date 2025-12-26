@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
+import {FaHeart} from 'react-icons/fa';
 import PropertyCard from './PropertyCard';
 import SearchForm from './SearchForm';
 import propertiesData from '../data/properties.json';
@@ -52,6 +54,14 @@ function SearchPage({ addToFavorites, favorites = [] }) {
                     />
                 ))}
             </div>
+
+           
+                <Link to="/favorites" className="floating-fav-btn">
+                    <span className="fav-text"> Go to Favorites </span><div className="icon-wrapper">
+                        <FaHeart />
+                        <span className="floating-badge">{favorites.length}</span>
+                    </div>
+                </Link>
         </div>
     );
 }

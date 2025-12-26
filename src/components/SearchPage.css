@@ -33,7 +33,7 @@
 
 .search-header{
     text-align:center;
-    margin: bottom 40px;
+    margin-bottom: 40px;
 }
 .search-header h2{
     font-size:3rem;
@@ -65,3 +65,85 @@
     border: 1px solid #eee;
 }
 
+.floating-fav-btn{
+    position: fixed;
+    bottom:40px;
+    right:40px;
+    z-index:1000;
+
+    background:rgba(31, 35, 33, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    gap:15px;
+    padding:12px 20px;
+    border-radius: 50px;
+
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.floating-fav-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    background:var(--primary-green);
+    border-color:var(--primary-green);
+    box-shadow:0 15px 40px rgba(111, 143, 106, 0.4);
+}
+
+.fav-text{
+    color:white;
+    font-weight:700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.icon-wrapper{
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:1.2rem;
+    color:white;
+}
+
+.floating-badge{
+    position: absolute;
+    top:-8px;
+    right:-10px;
+    background-color: #e74c3c;
+    color:white;
+    font-size:0.7rem;
+    font-weight: bold;
+    width:18px;
+    height:18px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2a2d2c;
+}
+
+@media (max-width: 768px){
+    .floating-fav-btn{
+        bottom:20px;
+        right:20px;
+        padding: 15px;
+        border-radius:50%;
+    }
+
+    .fav-text{
+        display: none;
+    }
+
+    .floating-badge{
+        top:-5px;
+        right:-5px;
+    }
+}
+
+  
