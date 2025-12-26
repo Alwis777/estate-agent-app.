@@ -122,7 +122,7 @@ function PropertyDetails({onAddToFavorites}) {
                      style={{border:0, borderRadius: '8px'}} 
                      loading="lazy" 
                      allowFullScreen
-                     src ={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}>
+                     title="Property Location" src={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}>
                    </iframe>
                 </div>
               )}
